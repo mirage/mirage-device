@@ -1,0 +1,7 @@
+description = "Mirage abstract devices"
+version = "%%VERSION_NUM%%"
+requires = "fmt"
+archive(byte) = "mirage-device.cma"
+archive(native) = "mirage-device.cmxa"
+plugin(byte) = "mirage-device.cma"
+plugin(native) = "mirage-device.cmxs"
