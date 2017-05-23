@@ -9,12 +9,9 @@ authors:       ["Thomas Gazagnaire" "Anil Madhavapeddy" "Gabriel Radanne"
                "Dave Scott" "David Kaloper" "Hannes Mehnert" "Richard Mortier"]
 tags:          [ "org:mirage"]
 license:       "ISC"
-
-build: ["ocaml" "pkg/pkg.ml" "build" "--pinned" "%{pinned}%"]
-
+build: [ [ "jbuilder" "build" ] ]
+build-test: [ [ "jbuilder" "runtest" ] ]
 depends: [
-  "ocamlfind"  {build}
-  "ocamlbuild" {build}
-  "topkg"      {build & >= "0.7.3"}
+  "jbuilder"  {build & >="1.0+beta7"}
   "fmt"
 ]
