@@ -9,8 +9,10 @@ authors:       ["Thomas Gazagnaire" "Anil Madhavapeddy" "Gabriel Radanne"
                "Dave Scott" "David Kaloper" "Hannes Mehnert" "Richard Mortier"]
 tags:          [ "org:mirage"]
 license:       "ISC"
-build: [ [ "jbuilder" "build" ] ]
-build-test: [ [ "jbuilder" "runtest" ] ]
+build: [
+  ["jbuilder" "subst"] {pinned}
+  ["jbuilder" "build" "-p" name "-j" jobs]
+]
 depends: [
   "jbuilder"  {build & >="1.0+beta7"}
   "fmt"
