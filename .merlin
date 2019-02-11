@@ -1,3 +1,0 @@
-PKG fmt
-S src/
-B _build/src/
