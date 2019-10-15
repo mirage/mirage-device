@@ -1,3 +1,9 @@
+v2.0.0
+------
+
+- specialise io to Lwt.t
+- remove type io
+
 v1.2.0 2019-02-08
 -----------------
 

@@ -36,13 +36,10 @@ val pp_error: error Fmt.t
     disconnect such a device. *)
 module type S = sig
 
-  type +'a io
-  (** The type for potentially blocking I/O operation *)
-
   type t
   (** The type representing the internal state of the device *)
 
-  val disconnect: t -> unit io
+  val disconnect: t -> unit Lwt.t
   (** Disconnect from the device. While this might take some time to
       complete, it can never result in an error. *)
 
