@@ -23,7 +23,6 @@ let pp_error ppf = function
   | `Disconnected  -> Fmt.string ppf "device is disconnected"
 
 module type S = sig
-  type +'a io
   type t
-  val disconnect: t -> unit io
+  val disconnect: t -> unit Lwt.t
 end
